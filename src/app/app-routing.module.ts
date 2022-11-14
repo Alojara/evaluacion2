@@ -8,8 +8,24 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./proyecto/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./proyecto/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'listar',
+    loadChildren: () => import('./proyecto/listar/listar.module').then( m => m.ListarPageModule)
+  },
+  {
+    path: 'detalle-prod',
+    loadChildren: () => import('./proyecto/detalle-prod/detalle-prod.module').then( m => m.DetalleProdPageModule)
   },
 ];
 
